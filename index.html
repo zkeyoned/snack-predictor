@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>零食发明机 SNACK-O-MATIC 3000</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=8">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-title">🍭 零食发明机 <span class="site-title-en">SNACK-O-MATIC 3000</span></h1>
+    <p class="site-subtitle">v0.3 内测版，永远内测版</p>
+  </header>
+
+  <main class="layout" id="view-assemble">
+
+    <!-- 左侧：拼装台 -->
+    <section class="workbench">
+      <nav class="tabs" aria-label="物料分类">
+        <button type="button" class="tab active" data-tab="bases">基底</button>
+        <button type="button" class="tab" data-tab="toppings">配料</button>
+        <button type="button" class="tab" data-tab="sauces">酱料</button>
+        <button type="button" class="tab" data-tab="packs">包装</button>
+      </nav>
+
+      <div id="card-wall" class="card-wall"></div>
+
+      <section class="tray">
+        <h2 class="tray-title">🧺 已选托盘</h2>
+        <ul id="tray-list" class="tray-list"></ul>
+      </section>
+    </section>
+
+    <!-- 右侧：预览 + 预测按钮 + 报告单 -->
+    <aside class="side-panel">
+      <div id="preview" class="preview"></div>
+      <button id="btn-predict" type="button" disabled>🔮 预测价格！</button>
+    </aside>
+
+  </main>
+
+  <!-- 预测页：点预测后整页切换（仪式 → 小票） -->
+  <section id="view-result" hidden>
+    <div class="ceremony" id="ceremony" hidden>
+      <div class="ceremony-gear">🍭</div>
+      <p class="ceremony-text" id="ceremony-text">校准零食雷达…</p>
+      <div class="ceremony-bar"><span class="ceremony-progress" id="ceremony-progress"></span></div>
+    </div>
+    <div class="result-stage" id="result-stage" hidden>
+      <div class="result-cols">
+        <!-- 左：成品大展示 + 夸张评语 -->
+        <div class="snack-showcase" id="snack-showcase"></div>
+        <!-- 右：价格小票 -->
+        <div class="receipt-wrap">
+          <div id="receipt" hidden></div>
+        </div>
+      </div>
+      <button id="btn-again" type="button">← 再发明一个</button>
+    </div>
+  </section>
+
+  <script src="js/data.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
